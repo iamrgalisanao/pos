@@ -1,0 +1,8 @@
+Seeding Complete! USE THESE FOR THE TERMINAL:
+---------------------------------------------------------
+Tenant ID: 10f6b277-e810-4855-9bdc-27f61f06e7da
+Store ID:  cb75fda7-a8f9-4713-9b9f-60417c51e399
+Staff ID:  e0be0b60-40b8-48f5-9888-7d8e71787565
+Email:     manager_841@grandcentral.com
+Token:     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUwYmUwYjYwLTQwYjgtNDhmNS05ODg4LTdkOGU3MTc4NzU2NSIsInRlbmFudF9pZCI6IjEwZjZiMjc3LWU4MTAtNDg1NS05YmRjLTI3ZjYxZjA2ZTdkYSIsInN0b3JlX2lkIjpudWxsLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc2OTcyNDE3NCwiZXhwIjoxNzY5ODEwNTc0fQ.bEwRHMBlYUzfTFPDJCrAS1wsk-KEakvsxoS3R2WsVpE
+---------------------------------------------------------

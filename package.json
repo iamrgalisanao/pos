@@ -1,0 +1,22 @@
+{
+  "name": "pos-system",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Point of Sale system with Offline-First capabilities",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "dashboard",
+    "frontend",
+    "infrastructure"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:dashboard": "npm run dev --workspace=dashboard",
+    "infra:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
+    "infra:down": "docker-compose -f infrastructure/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "axios": "^1.13.4",
+    "concurrently": "^8.2.2"
+  }
+}
