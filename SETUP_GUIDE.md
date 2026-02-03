@@ -37,20 +37,7 @@ git clone https://github.com/iamrgalisanao/pos.git
 cd pos
 ```
 
-## Step 2: Initialize Git Submodules
-
-The dashboard is a git submodule and needs to be initialized:
-
-```bash
-# Initialize and update submodules
-git submodule init
-git submodule update
-
-# Or do both in one command
-git submodule update --init --recursive
-```
-
-## Step 3: Configure Environment Variables
+## Step 2: Configure Environment Variables
 
 ### Main Project Environment
 
@@ -104,7 +91,7 @@ copy .env.example .env
 cd ..
 ```
 
-## Step 4: Choose Your Development Setup
+## Step 3: Choose Your Development Setup
 
 You have two options for running the project:
 
@@ -112,7 +99,7 @@ You have two options for running the project:
 
 This is the easiest and most consistent way to run the project.
 
-#### 4A.1: Verify Docker is Running
+#### 3A.1: Verify Docker is Running
 
 ```bash
 # Check Docker is installed and running
@@ -122,7 +109,7 @@ docker-compose --version
 # Start Docker Desktop if not running
 ```
 
-#### 4A.2: Start All Services
+#### 3A.2: Start All Services
 
 ```bash
 # Start all infrastructure and application services
@@ -132,7 +119,7 @@ docker-compose up -d
 docker-compose logs -f
 ```
 
-#### 4A.3: Wait for Services to Initialize
+#### 3A.3: Wait for Services to Initialize
 
 The first startup takes 2-5 minutes as Docker downloads images and initializes databases.
 
@@ -143,7 +130,7 @@ docker-compose ps
 # All services should show "Up" or "healthy"
 ```
 
-#### 4A.4: Verify Everything is Running
+#### 3A.4: Verify Everything is Running
 
 ```bash
 # Check backend health
@@ -163,7 +150,7 @@ curl http://localhost:4000/health
 
 If you prefer to run services locally without Docker:
 
-#### 4B.1: Install PostgreSQL
+#### 3B.1: Install PostgreSQL
 
 **Windows:**
 ```bash
@@ -184,7 +171,7 @@ sudo apt-get install postgresql-15
 sudo systemctl start postgresql
 ```
 
-#### 4B.2: Create Database
+#### 3B.2: Create Database
 
 ```bash
 # Connect to PostgreSQL
@@ -197,14 +184,14 @@ GRANT ALL PRIVILEGES ON DATABASE pos_db TO pos_user;
 \q
 ```
 
-#### 4B.3: Initialize Database Schema
+#### 3B.3: Initialize Database Schema
 
 ```bash
 # Run schema initialization
 psql -U pos_user -d pos_db -f backend/database/schema.sql
 ```
 
-#### 4B.4: Install Backend Dependencies
+#### 3B.4: Install Backend Dependencies
 
 ```bash
 # Navigate to backend directory
@@ -217,7 +204,7 @@ npm install
 npm run dev
 ```
 
-#### 4B.5: Install Dashboard Dependencies
+#### 3B.5: Install Dashboard Dependencies
 
 Open a new terminal:
 
@@ -232,7 +219,7 @@ npm install
 npm run dev
 ```
 
-## Step 5: Verify Installation
+## Step 4: Verify Installation
 
 ### Check Backend
 
@@ -261,7 +248,7 @@ docker-compose exec postgres psql -U pos_user -d pos_db -c "SELECT 1;"
 psql -U pos_user -d pos_db -c "SELECT 1;"
 ```
 
-## Step 6: Seed Initial Data (Optional)
+## Step 5: Seed Initial Data (Optional)
 
 If you need sample data for development:
 
@@ -274,7 +261,7 @@ npm run seed
 psql -U pos_user -d pos_db -f database/seed.sql
 ```
 
-## Step 7: Create Your First User
+## Step 6: Create Your First User
 
 ### Using the API
 
@@ -360,20 +347,6 @@ DATABASE_URL=postgresql://pos_user:pos_password@localhost:5432/pos_db
 
 # For Docker, use service name instead of localhost
 DATABASE_URL=postgresql://pos_user:pos_password@postgres:5432/pos_db
-```
-
-### Submodule Not Initialized
-
-**Problem:** Dashboard directory is empty
-
-**Solution:**
-```bash
-# Initialize submodules
-git submodule update --init --recursive
-
-# If still having issues, try:
-git submodule deinit -f dashboard
-git submodule update --init dashboard
 ```
 
 ### Permission Denied (Linux/Mac)

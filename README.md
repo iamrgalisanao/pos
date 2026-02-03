@@ -16,7 +16,6 @@ A modern, multi-tenant Point of Sale system built with Node.js, PostgreSQL, and 
 # Clone and setup
 git clone https://github.com/iamrgalisanao/pos.git
 cd pos
-git submodule update --init --recursive
 
 # Configure environment
 copy .env.example .env
